@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy Anniversary My Love 💖</title>
+<!-- ใส่ข้อความพรีวิวสำหรับแสดงในไลน์โดยเฉพาะ ตรงนี้เขาจะไม่เห็นในเว็บครับ -->
+<meta name="description" content="สุขสันต์วันครบรอบนะที่รัก เค้าทำควิซพิเศษนี้มาให้ ลองกดเข้ามาเล่นดูนะ 🎀💕">
 <style>
 * {
   box-sizing: border-box;
@@ -200,8 +202,8 @@ var QUESTIONS = [
   },
   {
     question: "สิ่งไหนที่เค้าทำแล้วที่รักรู้สึกขอบคุณและมีความสุขที่สุด?",
-    choices: ["การคอยอยู่ข้างๆ เวลาที่เหนื่อย", "การคอยหาของอร่อยให้กิน", "การใส่ใจในเรื่องเล็กๆ น้อยๆ", "ถูกทุกข้อเลย ดีที่สุดในโลก"],
-    answer: "" // ปล่อยว่างไว้ เพราะกดข้อไหนก็ถูกครับ
+    choices: ["การคอยอยู่ข้างๆ เวลาที่เหนื่อย", "การได้มีหนูอยู่ในชีวิตพี่", "การใส่ใจในเรื่องเล็กๆ น้อยๆ", "ถูกทุกข้อเลย ดีที่สุดในโลก"],
+    answer: "" 
   },
   {
     question: "ตลอดเวลาที่ผ่านมา เค้าเป็นแฟนที่ดีสำหรับที่รักหรือยัง?",
@@ -210,7 +212,7 @@ var QUESTIONS = [
   },
   {
     question: "วันครบรอบปีนี้... ที่รักอยากจับมือเดินทางไปด้วยกันอีกนานแค่ไหน?",
-    choices: ["ตลอดไปเลยครับ", "นานจนแก่เฒ่าเลยนะ", "ไปเรื่อยๆ จนกว่าเธอจะเบื่อ", "จับมือกันไปแบบนี้ในทุกๆ วัน"],
+    choices: ["ตลอดไปเลยครับ", "นานจนแก่เลยนะ", "ไปเรื่อยๆ จนกว่าเธอจะเบื่อ", "จับมือกันไปแบบนี้ในทุกๆ วัน"],
     answer: ""
   }
 ];
@@ -278,7 +280,6 @@ function checkAnswer(selectedAnswer, element) {
   var q = QUESTIONS[currentIndex];
   var wrongMsg = document.getElementById('wrongMsg');
 
-  // เงื่อนไข: ถ้าไม่ใช่หน้าแรก (คำถาม 3 ข้อหลัง) ให้กดข้อไหนก็ถูกหมดทันที
   if (!q.isWelcome || selectedAnswer === q.answer) {
     wrongMsg.style.display = 'none';
     
@@ -290,7 +291,6 @@ function checkAnswer(selectedAnswer, element) {
       renderQuestion();
     }
   } else {
-    // ระบบล็อกปุ่มหน้าแรกกรณีตอบหัวใจดวงน้อยยังอยู่เหมือนเดิม
     triggerShake(); 
     if (element.innerText === "❤️") {
       element.innerText = "กดผิดแน่ๆ เอาใหม่! 🥺";
@@ -306,8 +306,8 @@ function showIntermissionPage() {
     `<h2>ที่รักเก่งมาก เค้ารักที่รักที่สุดในโลกเยยย 💐✨</h2>` +
     `<p>ที่รักพร้อมตอบคำถามข้อถัดไปไหม?</p>` +
     `<div class="choices-container">` +
-      `<button class="choice-btn btn-blue" onclick="proceedToQuiz()">พร้อม </button>` +
-      `<button class="choice-btn btn-pink" onclick="proceedToQuiz()">พร้อม </button>` +
+      `<button class="choice-btn btn-blue" onclick="proceedToQuiz()">พร้อม</button>` +
+      `<button class="choice-btn btn-pink" onclick="proceedToQuiz()">พร้อม</button>` +
     `</div>`;
 }
 
@@ -322,9 +322,9 @@ function showFinalPage() {
     '<div class="final">' +
     '<h1>Happy Anniversary! 🎉💕</h1>' +
     '<p>เก่งมากที่ตอบถูกทุกข้อเลยนะ 🎀</p>' +
-    '<p>ขอบคุณที่รักที่อยู่กับหนูตลอด หนูโชคดีที่มีแฟนเป็นพี่นะ</p>' +
-    '<p>เค้ารักที่รักที่สุดในโลกและจะรักแบบนี้ในทุกๆ วันเลยนะ 💖</p>' +
-    '<p>— วันนี้เค้ารักพี่ล้านล้านเม็ดถั่วเขียวเลย 🌸</p>' +
+    '<p>ขอบคุณสำหรับทุกอย่างที่ผ่านมา ขอบคุณที่คอยดูแลและอยู่เคียงข้างกันเสมอนะ</p>' +
+    '<p>เค้าโชคดีที่มีพี่เป็นแฟน และอยากโชคดีตลอดไปเลย💖</p>' +
+    '<p>— หนูรักพี่นะ และจะรักไปทุ๊กกกทุกวันเลย 🌸</p>' +
     '</div>';
 }
 
